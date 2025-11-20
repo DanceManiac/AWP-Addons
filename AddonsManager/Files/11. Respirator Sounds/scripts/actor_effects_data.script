@@ -1,0 +1,95 @@
+options = {
+	-- minimal distance from actor to draw helmet (increase it if helmet disapear when running / jumping)
+	cam_dist = 1.4,
+	radiation_ppe_threshold = 0.3,
+
+	outfits = {
+		exo_outfit = "helm_exo",
+		merc_exo_outfit = "helm_exo",
+		svoboda_exo_outfit = "helm_exo",
+		dolg_exo_outfit = "helm_exo",
+		monolith_exo_outfit = "helm_exo",
+		scientific_outfit = "helm_scientific",
+		svoboda_scientific_outfit = "helm_scientific",
+		dolg_scientific_outfit = "helm_scientific",
+		ecolog_outfit = "helm_scientific",
+		monolith_scientific_outfit = "helm_scientific",
+	},
+	helmets = {
+		helm_respirator = "helm_scientific",
+		helm_respirator_joker = "helm_scientific",
+		helm_hardhat = "helm_scientific",
+		helm_hardhat_snag = "helm_scientific",
+		helm_protective = "helm_scientific",
+		helm_tactic = "helm_scientific",
+		helm_battle = "helm_scientific",
+	},
+	helmet_no_respi = {
+		-- helmets that doesn't provide respirator (no gasmask breath sounds)
+		helm_hardhat = true,
+	},
+	health = {
+		level1 = 0.1,
+		level2 = 0.3,
+		death_ppe = "3.ppe",
+		little_delta = 3,
+		little_ppe = "5.ppe",
+		middle_delta = 2,
+		middle_anm = {"shell_shock","hit_front","hit_right","hit_back","hit_left","hit_front_left","hit_back_left","hit_front_right","hit_back_right"},
+		middle_snd = {"pain_middle_1","pain_middle_2","pain_middle_3","pain_middle_4","pain_middle_5","pain_middle_6","pain_middle_7","pain_middle_8","pain_middle_9","pain_middle_10","pain_middle_11","pain_middle_12","pain_middle_13","pain_middle_14","pain_middle_15","pain_1","pain_2","pain_3","pain_4","pain_5","pain_6","pain_7","pain_8","pain_9","pain_10","pain_11","pain_12","pain_13","pain_14","pain_15","pain_16","pain_17","pain_18"},
+		huge_delta = 40,
+		huge_ppe = "5.ppe",
+		huge_anm = {"head_shot","fusker"},
+		huge_snd = {"pain_huge_1","pain_huge_2","pain_huge_3","pain_huge_4","pain_huge_5","pain_huge_6","pain_huge_7","pain_huge_8","pain_huge_9","pain_huge_10","pain_huge_11","pain_huge_12","pain_huge_13"},
+		drop_wnp_prob = 0.05,
+		no_drop_wnp = {bolt = true},
+		injury_snd = {
+			_1_0 = 2825,
+			_1_1 = 2612,
+			_1_2 = 2783,
+			_1_3 = 2821,
+			_1_4 = 3048,
+			_1_5 = 3100,
+			_1_6 = 3145,
+			_1_7 = 3148,
+			_1_8 = 3248,
+			_2_1 = 3331,
+			_2_2 = 3785, 
+			_2_3 = 2989,
+			_2_4 = 4066,
+			_2_5 = 5066,
+			_2_6 = 5566,
+			_2_7 = 6066,
+			_2_8 = 6366,
+		},
+	},
+	speed = {
+		-- minimal speed for actor being treated as "running"
+		mini = 0.5,
+		-- speed time increase per update (when running)
+		inc = 0.4,
+		-- speed time decrease per update (when not running)
+		dec = 0.5,
+		-- minimal speed time for playing breath sounds (when no gasmask)
+		time_mini = 4,
+		-- play breath sounds (when no gasmask) when stamina is below this level 
+		stamina = 0.3,
+		-- on actor hit, actor_speed_time += delta_health*k_health
+		k_health = 0.3,
+		-- actor_speed_time += bleeding*k_bleed
+		k_bleed = 1.2,
+	},
+}
+
+wpn_fx = {
+
+	k_aim = 0.8,
+
+}
+
+
+item_fx = {
+	helm_respirator = {
+		[30] = "level.add_pp_effector(\"helm_hardhat.ppe\",3000,true)",
+	},
+}
